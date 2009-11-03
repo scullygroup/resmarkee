@@ -1,0 +1,17 @@
+%h1
+  Book a Tour
+
+%strong
+  Locations
+%select{ :id => 'location', :name => 'location' }
+  - show_locations_activities
+
+%p
+
+%strong
+  Activities
+%span#activity_list
+  %select{ :id => 'activities', :name => 'activities' }
+    %option{ :value => "" }-- Select an Activity --
+
+= observe_field("location", :update => "activity_list", :url => { :action => 'show_activities' }, :with => "'location='+value")

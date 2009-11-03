@@ -1,0 +1,50 @@
+h1. Remarkee
+
+Resmarkee is a rubygem that provides a SOAP connection to a Resmark reservation server and displays a list of locations, associated activities, start/end dates, and number of guests in an "Expedia"-like widget for booking trips.  Form values in the widget are submitted to the Resmark reservation server, and the user is directed to the organization's reservation server to complete the transaction.
+
+h3. Features
+
+* Populates a select box of all available locations
+* Selecting a location populates a select box of activities for that location via AJAX
+* Field for start date, end date, and number of guests
+* Submitting the form takes the user to the Resmark reservation system to complete the transaction
+
+h3. Requirements
+
+* haml
+* prototype or jrails javascript libraries
+* Resmark web services account
+
+h3. How to Use
+
+Install the gem like any other:
+<pre><code>
+  sudo gem install resmarkee
+</code></pre>
+
+Run the supplied generator from within your Rails app:
+<pre><code>
+  script/generate booking
+
+This installs the following template files:
+<pre><code>
+  |____controllers
+  | |____bookings_controller.rb
+  |____helpers
+  | |____bookings_helper.rb
+  |____models
+  | |____booking.rb
+  |____views
+  | |____bookings
+  | | |_____activities.html.haml
+  | | |____index.html.haml
+</code></pre>
+
+Insert the following near the top of your environment.rb file:
+<pre><code>
+  USERNAME = 'myresmarkusername'
+  PASSWORD = '123abc123abc123abc123abc'
+  HOST = 'reservations.mydomain.com'
+</code></pre>
+
+_Note that you must have a valid username and password for accessing the Resmark Web Services._
