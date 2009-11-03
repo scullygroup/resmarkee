@@ -25,6 +25,7 @@ Install the gem like any other:
 Run the supplied generator from within your Rails app:
 <pre><code>
   script/generate booking
+</code></pre>
 
 This installs the following template files:
 <pre><code>
