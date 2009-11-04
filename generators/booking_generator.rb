@@ -15,6 +15,9 @@ class BookingGenerator < Rails::Generator::Base
       m.directory "app/views/bookings"
       m.file "views/bookings/_activities.html.haml", "app/views/bookings/_activities.html.haml"
       m.file "views/bookings/index.html.haml", "app/views/bookings/index.html.haml"
+      
+      # Images
+      m.file "images/calendar.png", "public/images/calendar.png"
     end
   end
 

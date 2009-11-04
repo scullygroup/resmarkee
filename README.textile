@@ -12,7 +12,7 @@ h3. Features
 h3. Requirements
 
 * haml
-* prototype or jrails javascript libraries
+* jrails, jquery, jquery-ui javascript libraries
 * Resmark web services account
 
 h3. How to Use
@@ -33,6 +33,24 @@ Navigate to the directory where you cloned the gem and run:
   rake gem install
 </code></pre>
 
+Require the gem in your environment.rb file:
+<pre><code>
+  config.gem "resmarkee", :lib => "resmarkee"
+</code></pre>
+
+Vendor the gem:
+<pre><code>
+  rake gems:unpack
+</code></pre>
+
+Insert the following near the top of your environment.rb file:
+<pre><code>
+  USERNAME = 'myresmarkusername'
+  PASSWORD = '123abc123abc123abc123abc'
+  HOST = 'reservations.mydomain.com'
+</code></pre>
+_Note that you must have a valid username and password for accessing the Resmark Web Services._
+
 Run the supplied generator from within your Rails app:
 <pre><code>
   script/generate booking
@@ -52,11 +70,8 @@ This installs the following template files:
   | | |____index.html.haml
 </code></pre>
 
-Insert the following near the top of your environment.rb file:
+Be sure to reference the required javascripts and stylesheets in your layout:
 <pre><code>
-  USERNAME = 'myresmarkusername'
-  PASSWORD = '123abc123abc123abc123abc'
-  HOST = 'reservations.mydomain.com'
+  = stylesheet_link_tag 'http://jqueryui.com/latest/themes/base/ui.all.css'
+  = javascript_include_tag :defaults, 'http://jqueryui.com/latest/ui/ui.datepicker.js', 'booking'
 </code></pre>
-
-_Note that you must have a valid username and password for accessing the Resmark Web Services._

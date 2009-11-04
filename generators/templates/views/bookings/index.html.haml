@@ -1,17 +1,40 @@
 %h1
   Book a Tour
 
-%strong
-  Locations
-%select{ :id => 'location', :name => 'location' }
-  - show_locations_activities
+%form{ :id => "resmarkForm", :action => "https://#{HOST}/express/reservation/results.jsf" }
+  %p
+    %label
+      Locations
+    %select{ :id => 'locationId', :name => 'locationId' }
+      - show_locations_activities
 
-%p
+  %p
+    %label
+      Activities
+    %span#activity_list
+      %select{ :id => 'typeId', :name => 'typeId' }
+        %option{ :value => "" }-- Select an Activity --
 
-%strong
-  Activities
-%span#activity_list
-  %select{ :id => 'activities', :name => 'activities' }
-    %option{ :value => "" }-- Select an Activity --
+  #datepicker
+    %p
+      %label
+        Start Date
+      %input{ :id => "startDate", :class => "date-pick", :name => "startDate" }
+      %a{ :class => "dp-choose-date", :title => "Choose date", :href => "#" }
 
-= observe_field("location", :update => "activity_list", :url => { :action => 'show_activities' }, :with => "'location='+value")
+    %p
+      %label
+        End Date
+      %input{ :id => "endDate", :class => "date-pick", :name => "endDate" }
+      %a{ :class => "dp-choose-date", :title => "Choose date", :href => "#" }
+
+  %p
+    Guests
+    %select{ :id => 'guestCount', :name => 'guestCount' }
+      - for n in 1..35
+        %option{ :value => "#{n}" }#{n}
+  
+  %p
+    %input{ :type => "submit", :value => "Submit" }
+    
+= observe_field("locationId", :update => "activity_list", :url => { :action => 'show_activities' }, :with => "'locationId='+value")

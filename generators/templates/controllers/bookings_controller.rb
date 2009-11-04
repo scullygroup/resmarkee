@@ -4,7 +4,7 @@ class BookingsController < ApplicationController
   end
   
   def show_activities
-    @id = params[:location]
+    @id = params[:locationId]
     render :partial => 'activities', :locals => { :location_id => "#{@id}" }
   end
   
