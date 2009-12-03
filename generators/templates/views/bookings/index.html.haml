@@ -1,7 +1,7 @@
 %h1
   Book a Tour
 
-%form{ :id => "resmarkForm", :action => "https://#{HOST}/express/reservation/results.jsf" }
+%form{ :id => "resmarkForm", :action => "https://#{HOST}/express/reservation/results.jsf", :target => "_blank" }
   %p
     %label
       Locations
@@ -12,7 +12,7 @@
     %label
       Activities
     %span#activity_list
-      %select{ :id => 'typeId', :name => 'typeId' }
+      %select{ :id => 'activityNameId', :name => 'activityNameId' }
         %option{ :value => "" }-- Select an Activity --
 
   #datepicker
