@@ -2,8 +2,8 @@ require 'rubygems'
 require 'rake'  
 require 'echoe'
     
-Echoe.new('resmarkee', '0.1.0') do |p|  
-   p.description     = "Connect to Resmark Web Services"  
+Echoe.new('resmarkee', '0.1.1') do |p|  
+   p.description     = "Connect to Resmark Reservation Web Services"  
    p.url             = "http://github.com/scullygroup/resmarkee"  
    p.author          = "Brandon Calloway"  
    p.email           = "brandon@scullytown.com"  
