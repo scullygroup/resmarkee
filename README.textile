@@ -29,8 +29,8 @@ Clone the gem:
 
 Navigate to the directory where you cloned the gem and run:
 <pre><code>
-  rake gem manifest
-  rake gem install
+  rake manifest
+  rake install
 </code></pre>
 
 Require the gem in your environment.rb file:
