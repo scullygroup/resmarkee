@@ -17,29 +17,14 @@ h3. Requirements
 
 h3. How to Use
 
-First, be sure you have the echoe gem installed:
-<pre><code>
-  sudo gem install echoe
-</code></pre>
-
-Clone the gem:
-<pre><code>
-  git clone git@codaset.com:bcalloway/resmarkee.git
-</code></pre>
-
-Navigate to the directory where you cloned the gem and run:
-<pre><code>
-  rake manifest
-  rake install
-</code></pre>
-
 Require the gem in your environment.rb file:
 <pre><code>
   config.gem "resmarkee", :lib => "resmarkee"
 </code></pre>
 
-Vendor the gem:
+Install and vendor the gem:
 <pre><code>
+  rake gems:install
   rake gems:unpack
 </code></pre>
 
